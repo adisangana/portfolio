@@ -1,0 +1,56 @@
+.hero {
+    flex: 1; /* Allows it to grow and fill available space */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers text */
+    background-color: transparent; /* Keeps background clear */
+    padding: 0 20px; /* Adds padding to the container */
+    margin-left: 15%; /* Offsets for the side navigation bar */
+    position: relative; /* For positioning child elements if needed */
+    height: 100vh; /* Makes the section full viewport height */
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+.hero-content {
+    display: flex; /* Enables flexbox for the content */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text is centered */
+    padding: 20px; /* Adds spacing around the content */
+    max-width: 800px; /* Ensures the content doesn't stretch too wide */
+    width: 100%; /* Stretches the content to fit the container */
+}
+
+
+
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}

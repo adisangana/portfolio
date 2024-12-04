@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './styles/Global.css';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Skills from './components/Skills';
+import BackgroundAnimation from './components/BackgroundAnimation';
 
-function App() {
+const App = () => {
+  const [currentSection, setCurrentSection] = useState('home');
+  const [darkMode, setDarkMode] = useState(true);
+
+  const showSection = (section) => {
+    setCurrentSection(section);
+  };
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    document.body.style.backgroundColor = darkMode ? '#fff' : '#000';
+    document.body.style.color = darkMode ? '#000' : '#fff';
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BackgroundAnimation darkMode={darkMode} />
+      <Navigation showSection={showSection} toggleTheme={toggleTheme} />
+      {currentSection === 'home' && <Hero />}
+      {currentSection === 'about' && <About />}
+      {currentSection === 'projects' && <Projects />}
+      {currentSection === 'contact' && <Contact />}
+      {currentSection === 'skills' && <Skills />}
     </div>
   );
-}
+};
 
 export default App;
